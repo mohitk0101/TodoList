@@ -41,7 +41,7 @@ function Task({todo}){
              
             </button>
 
-            <button onClick={remove}>
+            <button onClick={remove} className="ml-2">
               r
             </button>
         </div>
