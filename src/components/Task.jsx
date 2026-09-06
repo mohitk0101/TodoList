@@ -14,7 +14,7 @@ function Task({todo}){
     }
     return (
         <>
-        <div>
+        <div className="border-2 border-orange-400">
             <input
               type="checkbox"
               checked={todo.completed}

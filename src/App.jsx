@@ -30,13 +30,15 @@ function App(){
   },[todos])
   return (
     <TodoProvider value={{ todos, addtodo, updated, deleted, toggled }}>
-    <Form />
+    <div className='h-full w-full text-center m-2 '>
+      <Form />
 
     {todos.map((todo) => (
         <div key={todo.id}>
             <Task todo={todo} />
         </div>
     ))}
+    </div>
    </TodoProvider>
   )
 }

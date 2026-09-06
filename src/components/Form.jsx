@@ -15,9 +15,9 @@ function  Form(){
             <input type="text"
             value = {todomsg}
             onChange={(e)=>settodomsg(e.target.value)}
-            className="border-2 border-red"
+            className=" border-2 border-black m-2"
              />
-            <button className="border-2 border-black">
+            <button className="border-2 border-black px-2 bg-blue-500 hover: bg-blue-700 text-white">
                 Add
             </button>
         </form>
