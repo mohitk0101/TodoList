@@ -4,7 +4,10 @@ import Task from './components/task'
 import { TodoProvider } from "./TodoContext/Todo";
 
 function App(){
-  const[todos,settodos]=useState([])
+  const[todos,settodos]= useState(() => {
+  const data = localStorage.getItem("todos");
+  return data ? JSON.parse(data) : [];
+});
   const addtodo = (todo)=>{
       settodos((todos) => [{id:Date.now(),...todo},...todos])
   }
@@ -21,10 +24,10 @@ function App(){
       (prevtodo)=>prevtodo.id==id?{...prevtodo,completed: !prevtodo.completed}:prevtodo
     ))
   }
-  useEffect(()=>{
-    let data = JSON.parse(localStorage.getItem("todos"))|| [];
-    settodos(data)
-},[])
+//   useEffect(()=>{
+//     let data = JSON.parse(localStorage.getItem("todos"))|| [];
+//     settodos(data)
+// },[])
   useEffect(()=>{
       localStorage.setItem("todos",JSON.stringify(todos))
   },[todos])
